@@ -29,8 +29,10 @@ public class HelloController {
     String Capital;
     @FXML
     protected void onHelloButtonClick() {
+        juego game = new juego();
+        pregunta pregunta1 = game.generarPregunta();
 
-        pregunta pregunta1 = new pregunta();
+//        pregunta pregunta1 = new pregunta();
         labelDepartamento.setText(pregunta1.getDepartamento());
         labelCapital.setText(pregunta1.getCapital());
         labelDescripcion.getChildren().clear();

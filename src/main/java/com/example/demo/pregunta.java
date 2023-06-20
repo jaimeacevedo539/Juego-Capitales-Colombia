@@ -1,7 +1,5 @@
 package com.example.demo;
 
-import javafx.scene.Node;
-
 public class pregunta {
     //constructor
     public pregunta(){}
@@ -64,13 +62,23 @@ public class pregunta {
         Descripcion = matriz[aleatorio][2];
         return Descripcion;
     }
-    public String generarOpciones(){
-        int opcion1 = (int) (Math.random() * 30 + 1);
-        int opcion2 = (int) (Math.random() * 30 + 1);
-        int opcion3 = (int) (Math.random() * 30 + 1);
+    public String[][] generarOpciones(){
+        int r1 = (int) (Math.random() * 30 + 1);
+        int r2 = (int) (Math.random() * 30 + 1);
+        int r3 = (int) (Math.random() * 30 + 1);
 
-        String cadenaRespuestas = matriz[aleatorio][1]+" - " +matriz[opcion1][1]+" - " +matriz[opcion2][1]+" - " +matriz[opcion3][1];
-        return cadenaRespuestas;
+        String [][] respuestas = {
+                {matriz[aleatorio][1],String.valueOf(aleatorio)},
+                {matriz[r1][1],String.valueOf(r1)},
+                {matriz[r2][1],String.valueOf(r2)},
+                {matriz[r3][1],String.valueOf(r3)},
+
+
+
+
+        };
+        //String cadenaRespuestas = matriz[aleatorio][1]+" - " +matriz[opcion1][1]+" - " +matriz[opcion2][1]+" - " +matriz[opcion3][1];
+        return respuestas;
     }
 
 

@@ -11,7 +11,7 @@
    <children>
       
       <Button fx:id="newGame" layoutX="577.0" layoutY="398.0" mnemonicParsing="false" onAction="#inicio" text="Iniciar Juego" />
-      <ImageView fitHeight="328.0" fitWidth="356.0" layoutX="83.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="349.0" fitWidth="352.0" layoutX="100.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@0.png" />
          </image></ImageView>

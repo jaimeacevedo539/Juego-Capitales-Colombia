@@ -17,7 +17,7 @@ public class Scene2Controller {
 
     @FXML
     void inicio(ActionEvent event) throws IOException {
-        new SceneSwitch(Scene2AnchorPane, "Scene1.fxml");
+        new SceneSwitch(Scene2AnchorPane, "Scene3.fxml");
     }
 
 }
