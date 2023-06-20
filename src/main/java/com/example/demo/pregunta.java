@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.Arrays;
+
 public class pregunta {
     //constructor
     public pregunta(){}
@@ -10,7 +12,7 @@ public class pregunta {
             {"Antioquia", "Medellín","El departamento de Antioquia  posee la segunda ciudad más poblada del país, la ciudad de Medellín, su capital. Está ubicado al noroeste del país, en las regiones Andina y Caribe. Es uno de los departamentos más grandes del país con 63 600 km² y está considerado como el departamento más poblado de toda Colombia."},
             {"Arauca", "Arauca","El departamento de Arauca cuya capital lleva el mismo nombre: Arauca, está ubicado al oriente del país, en la región Orinoquía, en límites con Venezuela, al sur con Vichada y Casanare, y al occidente con Boyacá."},
             {"Atlántico", "Barranquilla","El Atlántico debe su nombre al mar que lo baña y se encuentra ubicado en la región Caribe, limita al norte con el Océano Atlántico, al oriente con el río Magdalena y al sur con el departamento de Bolívar y por el occidente con el mar caribe y el departamento de Bolivar. Su posición astronómica está entre los 10° 16′ y los 11°06′ de latitud norte y los 74° 42′ y 75°15′ de longitud occidental."},
-            {"Bolívar ", " Cartagena","El departamento de Bolívar está ubicado en la región Caribe o Costa Atlántica. Su capital es Cartagena de Indias, principal destino turístico de Colombia."},
+            {"Bolívar", "Cartagena","El departamento de Bolívar está ubicado en la región Caribe o Costa Atlántica. Su capital es Cartagena de Indias, principal destino turístico de Colombia."},
             {"Boyacá", "Tunja","El departamento de Boyacá está ubicado en la región Andina, en el centro del país, su capital es la ciudad de Tunja."},
             {"Caldas", "Manizales","El departamento de Caldas está en la región andina y su capital es la ciudad de Manizales. Limita al norte con Antioquia, al oriente con Boyacá y Cundinamarca, al sur con Tolima y Risaralda y al occidente con Risaralda."},
             {"Caquetá", "Florencia","El departamento del Caquetá está ubicado en la Amazonía colombiana. Su capital es Florencia y se puede encontrar al sur del país."},
@@ -62,22 +64,20 @@ public class pregunta {
         Descripcion = matriz[aleatorio][2];
         return Descripcion;
     }
-    public String[][] generarOpciones(){
+    public String [] generarOpciones(){
         int r1 = (int) (Math.random() * 30 + 1);
         int r2 = (int) (Math.random() * 30 + 1);
         int r3 = (int) (Math.random() * 30 + 1);
 
-        String [][] respuestas = {
-                {matriz[aleatorio][1],String.valueOf(aleatorio)},
-                {matriz[r1][1],String.valueOf(r1)},
-                {matriz[r2][1],String.valueOf(r2)},
-                {matriz[r3][1],String.valueOf(r3)},
-
-
-
-
+        String [] respuestas = {
+                matriz[aleatorio][1],
+                matriz[r1][1],
+                matriz[r2][1],
+                matriz[r3][1],
         };
-        //String cadenaRespuestas = matriz[aleatorio][1]+" - " +matriz[opcion1][1]+" - " +matriz[opcion2][1]+" - " +matriz[opcion3][1];
+
+        //Arrays.sort(respuestas);
+
         return respuestas;
     }
 

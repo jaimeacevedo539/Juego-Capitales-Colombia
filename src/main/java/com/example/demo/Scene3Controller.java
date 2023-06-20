@@ -1,11 +1,13 @@
 package com.example.demo;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.RadioButton;
 
+import java.util.Arrays;
 
 
 public class Scene3Controller {
@@ -25,6 +27,8 @@ public class Scene3Controller {
     juego game = new juego();
     pregunta preguntaini = game.generarPregunta();
     String RandomMap;
+    String respuestaUsuario;
+    String respuestaCorrecta;
 
     @FXML
     protected void initialize(){
@@ -33,16 +37,19 @@ public class Scene3Controller {
         RandomMap = preguntaini.getCodigo() + ".png";
         Image mapaMostrar = new Image(getClass().getResourceAsStream(RandomMap));
         mapa.setImage(mapaMostrar);
+        String Respuestas[] = preguntaini.generarOpciones();
+        Arrays.sort(Respuestas);
+        respuestaCorrecta = preguntaini.getCapital();
         for (int i = 0; i < 4; i++) {
-            System.out.println(preguntaini.generarOpciones()[i][0]);
+            System.out.println(preguntaini.generarOpciones()[i]);
 
         }
-        respuesta1.setText(preguntaini.getCapital());
+        //respuesta1.setText(preguntaini.getCapital());
         System.out.println("-----");
-        respuesta1.setText(preguntaini.generarOpciones()[0][0]);
-        respuesta2.setText(preguntaini.generarOpciones()[1][0]);
-        respuesta3.setText(preguntaini.generarOpciones()[2][0]);
-        respuesta4.setText(preguntaini.generarOpciones()[3][0]);
+        respuesta1.setText(Respuestas[0]);
+        respuesta2.setText(Respuestas[1]);
+        respuesta3.setText(Respuestas[2]);
+        respuesta4.setText(Respuestas[3]);
     }
     @FXML
     protected void nuevaPregunta(){
@@ -51,15 +58,44 @@ public class Scene3Controller {
         RandomMap = question.getCodigo() + ".png";
         Image mapaMostrar = new Image(getClass().getResourceAsStream(RandomMap));
         mapa.setImage(mapaMostrar);
+        respuestaCorrecta = question.getCapital();
+        String Respuestas[] = question.generarOpciones();
+        Arrays.sort(Respuestas);
         //System.out.println(question.generarOpciones());
         for (int i = 0; i < 4; i++) {
-            System.out.println(question.generarOpciones()[i][0]);
+            System.out.println(Respuestas[i]);
         }
         System.out.println("-----");
-        respuesta1.setText(question.generarOpciones()[0][0]);
-        respuesta2.setText(question.generarOpciones()[1][0]);
-        respuesta3.setText(question.generarOpciones()[2][0]);
-        respuesta4.setText(question.generarOpciones()[3][0]);
+        respuesta1.setText(Respuestas[0]);
+        respuesta2.setText(Respuestas[1]);
+        respuesta3.setText(Respuestas[2]);
+        respuesta4.setText(Respuestas[3]);
     }
+
+    @FXML
+    protected void responder(ActionEvent event){
+        if(respuesta1.isSelected()){
+            System.out.println("Respuesta Usuario - "+respuesta1.getText());
+            System.out.println("Respuesta Correcta - "+respuestaCorrecta);
+            respuestaUsuario = respuesta1.getText();
+        }
+        if(respuesta2.isSelected()){
+            System.out.println("Respuesta - "+respuesta2.getText());
+            respuestaUsuario = respuesta2.getText();
+            System.out.println("Respuesta Correcta - "+respuestaCorrecta);
+        }
+        if(respuesta3.isSelected()){
+            System.out.println("Respuesta - "+respuesta3.getText());
+            respuestaUsuario = respuesta3.getText();
+            System.out.println("Respuesta Correcta - "+respuestaCorrecta);
+        }
+        if(respuesta4.isSelected()){
+            System.out.println("Respuesta - "+respuesta4.getText());
+            respuestaUsuario = respuesta4.getText();
+            System.out.println("Respuesta Correcta - "+respuestaCorrecta);
+        }
+
+    }
+
 
 }
