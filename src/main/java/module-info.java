@@ -3,6 +3,6 @@ module com.example.demo {
     requires javafx.fxml;
             
                             
-    opens com.example.demo to javafx.fxml;
-    exports com.example.demo;
+    opens ppb.grupo13.juegoCapitalesColombia to javafx.fxml;
+    exports ppb.grupo13.juegoCapitalesColombia;
 }
