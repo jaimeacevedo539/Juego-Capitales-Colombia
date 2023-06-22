@@ -7,12 +7,12 @@ public class CapitalesDeColombia {
     Tablero tablero;
 
     public CapitalesDeColombia() {
-        setHistoria(new Historial());
+        setHistorial(new Historial());
         setTablero(new Tablero());
     }
 
     public CapitalesDeColombia(Historial historial, Tablero tablero) {
-        setHistoria(historial);
+        setHistorial(historial);
         setTablero(tablero);
     }
 
@@ -21,7 +21,7 @@ public class CapitalesDeColombia {
     }
 
     private void setHistorial(Historial historial) {
-        this.historial = historia;
+        this.historial = historial;
     }
 
     public Jugador getJugador() {
