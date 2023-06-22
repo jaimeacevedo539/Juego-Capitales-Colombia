@@ -12,6 +12,8 @@ import java.util.Arrays;
 
 public class Scene3Controller {
     @FXML
+    public Label mostrarRespuesta;
+    @FXML
     private Label labelInit;
     @FXML
     private ImageView mapa;
@@ -94,7 +96,7 @@ public class Scene3Controller {
             respuestaUsuario = respuesta4.getText();
             System.out.println("Respuesta Correcta - "+respuestaCorrecta);
         }
-
+            mostrarRespuesta.setText("La respuesta es: "+ respuestaCorrecta);
     }
 
 
