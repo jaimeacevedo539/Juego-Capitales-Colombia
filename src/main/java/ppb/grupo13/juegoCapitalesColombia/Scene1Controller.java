@@ -47,7 +47,7 @@ public class Scene1Controller {
             Departamento = pregunta1.getDepartamento();
             Capital = pregunta1.getCapital();
             RandomMap = pregunta1.getCodigo() + ".png";
-            Image mapaMostrar = new Image(getClass().getResourceAsStream(RandomMap));
+            Image mapaMostrar = new Image(getClass().getResourceAsStream("images/"+RandomMap));
             mapa.setImage(mapaMostrar);
             //System.out.println(pregunta1.getCodigo() + " - " + pregunta1.getDepartamento() + " - " + pregunta1.getCapital());
             //System.out.println(pregunta1.generarOpciones());
