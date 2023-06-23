@@ -14,7 +14,7 @@
          <font>
             <Font size="24.0" />
          </font></Label>
-      <Button fx:id="btnSiguiente" layoutX="786.0" layoutY="465.0" mnemonicParsing="false" onAction="#nuevaPreguntaDos" text="Siguiente" />
+      <Button fx:id="btnSiguiente" layoutX="786.0" layoutY="465.0" mnemonicParsing="false" onAction="#nuevaPregunta" text="Siguiente" />
       <Label layoutX="460.0" layoutY="114.0" text="Capitales de Colombia SC3">
          <font>
             <Font size="36.0" />
