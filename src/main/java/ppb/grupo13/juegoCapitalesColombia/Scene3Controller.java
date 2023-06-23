@@ -2,6 +2,7 @@ package ppb.grupo13.juegoCapitalesColombia;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,6 +14,8 @@ import java.util.Arrays;
 public class Scene3Controller {
     @FXML
     public Label mostrarRespuesta;
+    @FXML
+    public Button btnSiguiente;
     @FXML
     private Label labelInit;
     @FXML
@@ -58,8 +61,8 @@ public class Scene3Controller {
         pregunta question = game.generarPregunta();
         labelInit.setText(question.getDepartamento());
         RandomMap = question.getCodigo() + ".png";
-        Image mapaMostrar = new Image(getClass().getResourceAsStream(RandomMap));
-        mapa.setImage(mapaMostrar);
+       Image mapaMostrar = new Image(getClass().getResourceAsStream(RandomMap));
+       mapa.setImage(mapaMostrar);
         respuestaCorrecta = question.getCapital();
         String Respuestas[] = question.generarOpciones();
         Arrays.sort(Respuestas);
@@ -96,8 +99,26 @@ public class Scene3Controller {
             respuestaUsuario = respuesta4.getText();
             System.out.println("Respuesta Correcta - "+respuestaCorrecta);
         }
-            mostrarRespuesta.setText("La respuesta es: "+ respuestaCorrecta);
+            mostrarRespuesta.setText("LA RESPUESTA ES: "+ respuestaCorrecta);
     }
 
+    @FXML
+    protected void nuevaPreguntaDos(){
+        pregunta nextPregunta = game.generarPregunta();
+        labelInit.setText(nextPregunta.getDepartamento());
 
+
+        respuestaCorrecta = nextPregunta.getCapital();
+        String Respuestas[] = nextPregunta.generarOpciones();
+
+
+        for (int i = 0; i < 4; i++) {
+            System.out.println(Respuestas[i]);
+        }
+        System.out.println("-----");
+        respuesta1.setText(Respuestas[0]);
+        respuesta2.setText(Respuestas[1]);
+        respuesta3.setText(Respuestas[2]);
+        respuesta4.setText(Respuestas[3]);
+    }
 }
