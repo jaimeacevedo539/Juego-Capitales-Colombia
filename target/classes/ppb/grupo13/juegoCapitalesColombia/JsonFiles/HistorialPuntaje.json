@@ -1,0 +1,5 @@
+{ "players" : [
+  {"alias" :  "Johan" , "puntaje" :  10 },
+  {"alias" :  "Jaime" , "puntaje" :  20 }
+]
+}
