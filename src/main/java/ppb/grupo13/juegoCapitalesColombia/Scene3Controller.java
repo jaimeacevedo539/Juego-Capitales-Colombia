@@ -2,6 +2,7 @@ package ppb.grupo13.juegoCapitalesColombia;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -11,6 +12,10 @@ import java.util.Arrays;
 
 
 public class Scene3Controller {
+    @FXML
+    public Label mostrarRespuesta;
+    @FXML
+    public Button btnSiguiente;
     @FXML
     private Label labelInit;
     @FXML
@@ -56,8 +61,9 @@ public class Scene3Controller {
         pregunta question = game.generarPregunta();
         labelInit.setText(question.getDepartamento());
         RandomMap = question.getCodigo() + ".png";
-        Image mapaMostrar = new Image(getClass().getResourceAsStream(RandomMap));
+        Image mapaMostrar = new Image(getClass().getResourceAsStream("images/"+RandomMap));
         mapa.setImage(mapaMostrar);
+
         respuestaCorrecta = question.getCapital();
         String Respuestas[] = question.generarOpciones();
         Arrays.sort(Respuestas);
@@ -94,7 +100,7 @@ public class Scene3Controller {
             respuestaUsuario = respuesta4.getText();
             System.out.println("Respuesta Correcta - "+respuestaCorrecta);
         }
-
+            mostrarRespuesta.setText("LA RESPUESTA ES: "+ respuestaCorrecta);
     }
 
 
