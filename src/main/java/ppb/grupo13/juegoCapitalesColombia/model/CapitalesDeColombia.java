@@ -2,9 +2,9 @@ package ppb.grupo13.juegoCapitalesColombia.model;
 
 public class CapitalesDeColombia {
 
-    Historial historial;
-    Jugador jugador;
-    Tablero tablero;
+    private Historial historial;
+    private Jugador jugador;
+    private Tablero tablero;
 
     public CapitalesDeColombia() {
         setHistorial(new Historial());

@@ -2,7 +2,7 @@ package ppb.grupo13.juegoCapitalesColombia.model;
 
 public class Pregunta {
     //constructor
-    public Pregunta(){}
+    private Pregunta(){}
     //listado departamentos
     String[][] matriz = new String[][]{
             {"Colombia","Bogota","Colombia tierra querida"},
@@ -38,7 +38,6 @@ public class Pregunta {
             {"Valle del Cauca", "Cali","El departamento del Valle del Cauca es uno de los departamentos más importantes del país y se encuentra ubicado entre la región Andina y Pacífica."},
             {"Vaupés", "Mitú","El departamento del Vaupés está ubicado en la región Amazónica, su capital es Mitú."},
             {"Vichada", "Puerto Carreño","El departamento del Vichada está ubicado al oriente del país, entre las regiones Orinoquía y Amazónica, Su capital es Puerto Carreño."},
-
     };
 
 

@@ -2,11 +2,11 @@ package ppb.grupo13.juegoCapitalesColombia.model;
 
 public class Departamento {
 
-    Pregunta pregunta;
-    String nombre;
-    String capital;
-    String region;
-    int numero;
+    private Pregunta pregunta;
+    private String nombre;
+    private String capital;
+    private String region;
+    private int numero;
 
     public Departamento(String nombre, int numero) {
         this.nombre = nombre;
