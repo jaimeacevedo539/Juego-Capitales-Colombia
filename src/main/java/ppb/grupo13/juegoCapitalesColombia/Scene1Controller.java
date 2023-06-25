@@ -8,6 +8,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+/**
+ * Controlador para la primera escena del juego "Capitales de Colombia".
+ */
 public class Scene1Controller {
 
     juego game = new juego();
@@ -35,6 +38,10 @@ public class Scene1Controller {
 
     @FXML
     private ImageView mapa;
+
+    /**
+     * Método para manejar el evento del botón "Hello".
+     */
     @FXML
     protected void onHelloButtonClick() {
             boton.setText("Siguiente");
