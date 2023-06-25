@@ -7,6 +7,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
 
+/**
+ * Controlador para la vista principal del juego "Capitales de Colombia".
+ */
 public class HelloController {
 
     @FXML
@@ -21,6 +24,10 @@ public class HelloController {
     String RandomMap;
     String Departamento;
     String Capital;
+
+    /**
+     * Método para manejar el evento del botón "Hello".
+     */
     @FXML
     protected void onHelloButtonClick() {
         juego game = new juego();
