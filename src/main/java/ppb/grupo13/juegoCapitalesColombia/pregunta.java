@@ -2,6 +2,9 @@ package ppb.grupo13.juegoCapitalesColombia;
 
 import java.util.Arrays;
 
+/**
+ * Clase para representar una pregunta en el juego "Capitales de Colombia".
+ */
 public class pregunta {
     //constructor
     public pregunta(){}
@@ -46,24 +49,48 @@ public class pregunta {
 
     int aleatorio = (int) (Math.random() * 30 + 1);
 
+    /**
+     * Método para obtener el código aleatorio.
+     * @return el código aleatorio.
+     */
     public int getCodigo(){
         return aleatorio;
     }
+
+    /**
+     * Método para obtener el nombre del departamento.
+     * @return el nombre del departamento.
+     */
     public String getDepartamento(){
         String Departamento;
         Departamento = matriz[aleatorio][0];
         return Departamento;
     }
+
+    /**
+     * Método para obtener el nombre de la capital del departamento.
+     * @return el nombre de la capital del departamento.
+     */
     public String getCapital(){
         String Capital;
         Capital = matriz[aleatorio][1];
         return Capital;
     }
+
+    /**
+     * Método para obtener la descripción del departamento.
+     * @return la descripción del departamento.
+     */
     public String getDescripcion(){
         String Descripcion;
         Descripcion = matriz[aleatorio][2];
         return Descripcion;
     }
+
+    /**
+     * Método para generar opciones de respuesta para la pregunta.
+     * @return un arreglo con las opciones de respuesta.
+     */
     public String [] generarOpciones(){
         int r1 = (int) (Math.random() * 30 + 1);
         int r2 = (int) (Math.random() * 30 + 1);
@@ -80,6 +107,9 @@ public class pregunta {
 
         return respuestas;
     }
+
+
+}
 
 
 }
