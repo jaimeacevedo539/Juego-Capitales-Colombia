@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import ppb.grupo13.juegoCapitalesColombia.model.Departamento;
 import ppb.grupo13.juegoCapitalesColombia.model.Historial;
 import ppb.grupo13.juegoCapitalesColombia.model.Jugador;
 import ppb.grupo13.juegoCapitalesColombia.model.Pregunta;
@@ -29,7 +30,7 @@ public class HelloApplication extends Application {
         h.agregarJugador(j);
         */
 
-        Pregunta p = new Pregunta("Cundinamarca");
+        /*Pregunta p = new Pregunta("Cundinamarca");
         System.out.println(p.getPregunta());
         System.out.println(p.getRespuestaCorrecta());
         System.out.println(p.getPuntaje());
@@ -37,7 +38,10 @@ public class HelloApplication extends Application {
 
         for (Object g:p.getOpciones()) {
             System.out.println(g);
-        }
+        }*/
+
+
+
 
     }
 

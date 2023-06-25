@@ -4,7 +4,6 @@ import javax.json.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 public class Departamento {
 
@@ -49,8 +48,8 @@ public class Departamento {
         return descripcion;
     }
 
-    public void setDescripcion(String region) {
-        this.descripcion = region;
+    private void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     public int getNumero() {
         return numero;
@@ -89,11 +88,11 @@ public class Departamento {
                     setDescripcion(dep.asJsonObject().getString("Informacion"));
                     break;
                 }
-                System.out.println(dep.asJsonObject().getString("Nombre"));
+                //System.out.println(dep.asJsonObject().getString("Nombre"));
             }
 
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 }

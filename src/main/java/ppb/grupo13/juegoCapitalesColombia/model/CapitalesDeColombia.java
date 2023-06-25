@@ -16,9 +16,7 @@ public class CapitalesDeColombia {
         setTablero(tablero);
     }
 
-    public Historial getHistorial() {
-        return historial;
-    }
+    public Historial getHistorial() {return historial;    }
 
     private void setHistorial(Historial historial) {
         this.historial = historial;
@@ -28,7 +26,7 @@ public class CapitalesDeColombia {
         return jugador;
     }
 
-    public void setJugador(Jugador jugador) {
+    private void setJugador(Jugador jugador) {
         this.jugador = jugador;
     }
 
@@ -40,21 +38,27 @@ public class CapitalesDeColombia {
         this.tablero = tablero;
     }
 
-    public boolean enviarRespuesta(String respuesta){
-        //ToDo
-        return false;
+    public String enviarRespuesta(String respuesta){
+        if(tablero.responder(respuesta)){
+            jugador.sumarPuntaje(tablero.obtenerPuntaje());
+            //tablero.generarPregunta();
+            return "¡Correcto!. "+tablero.getDescripcion();
+        }else{
+            //tablero.generarPregunta();
+            return "¡Incorrecto!. "+tablero.getDescripcion();
+        }
+        return "Respuesta No Especificada";
     }
 
     public int obtenerPuntaje(){
-        //ToDo
-        return 0;
+        return jugador.getPuntaje();
     }
 
-    public void registrarJugador(Jugador j){
-        //ToDo
+    public void registrarJugador(String j){
+        setJugador(new Jugador(j));
     }
 
-    public void crearTablero(){
-        //ToDo
+    public Pregunta siguiente(){
+        return tablero.generarPregunta();
     }
 }

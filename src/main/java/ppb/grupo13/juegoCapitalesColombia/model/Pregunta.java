@@ -33,7 +33,7 @@ public class Pregunta {
         return respuestaCorrecta;
     }
 
-    public void leerOpciones(String departamento){
+    private void leerOpciones(String departamento){
 
         try {
             File file = new File(JSON_DPTS);
@@ -74,7 +74,7 @@ public class Pregunta {
             }
 
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println(e.toString());
         }
     }
 
