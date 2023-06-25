@@ -1,23 +1,30 @@
 package ppb.grupo13.juegoCapitalesColombia.model;
 
+import javax.json.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
 public class Departamento {
 
-    Pregunta pregunta;
-    String nombre;
-    String capital;
-    String region;
-    int numero;
+    private final String JSON_DPTS = "src/main/resources/ppb/grupo13/juegoCapitalesColombia/JsonFiles/Departamentos.json";
+    private Pregunta pregunta;
+    private String nombre;
+    private String capital;
+    private String descripcion;
+    private int numero;
 
     public Departamento(String nombre, int numero) {
-        this.nombre = nombre;
-        this.numero = numero;
+        setNombre(nombre);
+        setNumero(numero);
+        leerInformacionDepartamento();
     }
 
     public Pregunta getPregunta() {
         return pregunta;
     }
 
-    public void setPregunta(Pregunta pregunta) {
+    private void setPregunta(Pregunta pregunta) {
         this.pregunta = pregunta;
     }
 
@@ -25,7 +32,7 @@ public class Departamento {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    private void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -33,33 +40,59 @@ public class Departamento {
         return capital;
     }
 
-    public void setCapital(String capital) {
+    private void setCapital(String capital) {
         this.capital = capital;
     }
 
-    public String getRegion() {
-        return region;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    private void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
-
     public int getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    private void setNumero(int numero) {
         this.numero = numero;
     }
 
-    public Pregunta crearPregunta(Departamento departamentos){
-        //ToDo
-        return null;
+    public Pregunta crearPregunta(){
+       pregunta = new Pregunta (nombre);
+       return pregunta;
     }
 
     public boolean esRespuestaCorrecta(String respuesta){
-        //ToDo
-        return false;
+        return respuesta.equals(pregunta.getRespuestaCorrecta());
+    }
+
+    private void leerInformacionDepartamento(){
+
+        try {
+            File file = new File(JSON_DPTS);
+            InputStream inputStream = new FileInputStream(file);
+
+            JsonReader jsonReader = Json.createReader(inputStream);
+            JsonObject jsonObjectFile = jsonReader.readObject();
+
+            jsonReader.close();
+            inputStream.close();
+
+            JsonArray departamentosArray = jsonObjectFile.getJsonArray("Departamentos");
+
+            for (JsonValue dep : departamentosArray) {
+                if (dep.asJsonObject().getString("Nombre").equals(nombre)) {
+                    setCapital(dep.asJsonObject().getString("Capital"));
+                    setDescripcion(dep.asJsonObject().getString("Informacion"));
+                    break;
+                }
+                //System.out.println(dep.asJsonObject().getString("Nombre"));
+            }
+
+        }catch (Exception e){
+            System.out.println(e.toString());
+        }
     }
 }
