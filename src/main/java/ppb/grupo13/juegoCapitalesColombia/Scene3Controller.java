@@ -10,7 +10,9 @@ import javafx.scene.control.RadioButton;
 
 import java.util.Arrays;
 
-
+/**
+ * Controlador para la tercera escena del juego "Capitales de Colombia".
+ */
 public class Scene3Controller {
     @FXML
     public Label mostrarRespuesta;
@@ -35,6 +37,9 @@ public class Scene3Controller {
     String respuestaUsuario;
     String respuestaCorrecta;
 
+    /**
+     * Método para inicializar la escena.
+     */
     @FXML
     protected void initialize(){
         labelInit.setText("cargado iniciar");
@@ -56,6 +61,10 @@ public class Scene3Controller {
         respuesta3.setText(Respuestas[2]);
         respuesta4.setText(Respuestas[3]);
     }
+
+    /**
+     * Método para generar una nueva pregunta.
+     */
     @FXML
     protected void nuevaPregunta(){
         pregunta question = game.generarPregunta();
@@ -78,6 +87,10 @@ public class Scene3Controller {
         respuesta4.setText(Respuestas[3]);
     }
 
+    /**
+     * Método para manejar el evento de responder a una pregunta.
+     * @param event el evento del botón.
+     */
     @FXML
     protected void responder(ActionEvent event){
         if(respuesta1.isSelected()){
