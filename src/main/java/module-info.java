@@ -6,4 +6,6 @@ module com.example.demo {
     exports ppb.grupo13.juegoCapitalesColombia;
     opens ppb.grupo13.juegoCapitalesColombia.controller to javafx.fxml;
     exports ppb.grupo13.juegoCapitalesColombia.controller;
+    opens ppb.grupo13.juegoCapitalesColombia.model to javafx.base;
+    exports ppb.grupo13.juegoCapitalesColombia.model;
 }

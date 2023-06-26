@@ -28,8 +28,8 @@
          </font></Label>
       <TableView fx:id="tblPuntajes" layoutX="445.0" layoutY="189.0" prefHeight="190.0" prefWidth="469.0">
         <columns>
-          <TableColumn fx:id="tcAlias" prefWidth="235.0" text="Alias" />
-          <TableColumn fx:id="tcPuntaje" prefWidth="233.0" text="Puntaje" />
+          <TableColumn fx:id="tcAlias" prefWidth="235.0" sortable="false" text="Alias" />
+          <TableColumn fx:id="tcPuntaje" prefWidth="233.0" sortType="DESCENDING" text="Puntaje" />
         </columns>
       </TableView>
 

@@ -69,11 +69,11 @@ public class Historial {
         }
     }
 
-    public TreeMap getPuntajesOrdenados(){
-        TreeMap<Integer,String> map = new TreeMap<Integer,String>();
+    public ArrayList<Jugador> getJugadores(){
+        ArrayList<Jugador> map = new ArrayList<>();
 
         for (Jugador j:jugadores.values()) {
-            map.put(j.getPuntaje(),j.getAlias());
+            map.add(j);
         }
 
         //System.out.println(map);

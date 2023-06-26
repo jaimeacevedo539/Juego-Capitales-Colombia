@@ -2,7 +2,7 @@ package ppb.grupo13.juegoCapitalesColombia.model;
 
 public class Jugador {
 
-    private String Alias;
+    private String alias;
     private int puntaje;
 
     public Jugador(String alias) {
@@ -19,11 +19,11 @@ public class Jugador {
     }
 
     public String getAlias() {
-        return Alias;
+        return alias;
     }
 
     private void setAlias(String alias) {
-        Alias = alias;
+        this.alias = alias;
     }
 
     public int getPuntaje() {
