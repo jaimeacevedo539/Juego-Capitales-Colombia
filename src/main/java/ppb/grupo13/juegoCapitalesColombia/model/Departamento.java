@@ -74,6 +74,7 @@ public class Departamento {
     }
 
     public boolean esRespuestaCorrecta(String respuesta){
+
         return respuesta.equals(pregunta.getRespuestaCorrecta());
     }
 
@@ -95,14 +96,15 @@ public class Departamento {
                 if (dep.asJsonObject().getString("Nombre").equals(nombre)) {
                     setCapital(dep.asJsonObject().getString("Capital"));
                     setDescripcion(dep.asJsonObject().getString("Informacion"));
-                    setRutaImg(dep.asJsonObject().getString("NombreImagen"));
+                    setRutaImg(dep.asJsonObject().getString("NombreImg"));
                     break;
                 }
                 //System.out.println(dep.asJsonObject().getString("Nombre"));
             }
 
         }catch (Exception e){
-            System.out.println(e.toString());
+            System.out.println("error al leer la informacion del departamento "+nombre);
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
 }

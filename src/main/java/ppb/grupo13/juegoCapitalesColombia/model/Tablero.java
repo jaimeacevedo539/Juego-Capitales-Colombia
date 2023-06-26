@@ -64,7 +64,8 @@ public class Tablero {
             }
             System.out.println("cargue deps finalizada");
         }catch (Exception e){
-            System.out.println(e);
+            System.out.println("error al leer los departamentos:");
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
 }

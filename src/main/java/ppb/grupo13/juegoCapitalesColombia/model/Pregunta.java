@@ -74,7 +74,8 @@ public class Pregunta {
             }
 
         }catch (Exception e){
-            System.out.println(e.toString());
+            System.out.println("error al leer opciones de pregunta");
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
 
@@ -82,7 +83,7 @@ public class Pregunta {
         this.respuestaCorrecta = respuestaCorrecta;
     }
 
-    public ArrayList getOpciones() {
+    public ArrayList<String> getOpciones() {
         return opciones;
     }
 

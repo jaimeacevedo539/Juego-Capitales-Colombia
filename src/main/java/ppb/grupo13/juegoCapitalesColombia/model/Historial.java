@@ -111,7 +111,8 @@ public class Historial {
             outputStream.close();
             //System.out.println("jugadores guardados: "+objectBuilder.build());
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println("error al leer el historial de puntajes");
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
 
