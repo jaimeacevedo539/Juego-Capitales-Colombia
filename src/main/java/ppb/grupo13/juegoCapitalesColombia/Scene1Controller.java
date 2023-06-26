@@ -12,7 +12,6 @@ public class Scene1Controller {
 
     juego game = new juego();
 
-
     @FXML
     private Label labelDepartamento;
 
@@ -27,11 +26,6 @@ public class Scene1Controller {
     String Capital;
     String RandomMap;
     int contador = 0;
-
-
-
-
-
 
     @FXML
     private ImageView mapa;

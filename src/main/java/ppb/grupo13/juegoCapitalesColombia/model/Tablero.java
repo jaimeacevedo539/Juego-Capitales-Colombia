@@ -34,6 +34,11 @@ public class Tablero {
         return depActual.getDescripcion();
     }
 
+    public String getRutaImg(){
+        return depActual.getRutaImg();
+    }
+
+
     private void leerDepartamentos(){
         try {
             File file = new File(JSON_DPTS);
@@ -59,7 +64,7 @@ public class Tablero {
             }
             System.out.println("cargue deps finalizada");
         }catch (Exception e){
-            System.out.println(e.toString());
+            System.out.println(e);
         }
     }
 }

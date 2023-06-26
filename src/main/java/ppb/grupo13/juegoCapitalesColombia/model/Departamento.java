@@ -12,6 +12,7 @@ public class Departamento {
     private String nombre;
     private String capital;
     private String descripcion;
+    private String rutaImg;
     private int numero;
 
     public Departamento(String nombre, int numero) {
@@ -59,6 +60,14 @@ public class Departamento {
         this.numero = numero;
     }
 
+    public String getRutaImg() {
+        return rutaImg;
+    }
+
+    private void setRutaImg(String rutaImg) {
+        this.rutaImg = rutaImg;
+    }
+
     public Pregunta crearPregunta(){
        pregunta = new Pregunta (nombre);
        return pregunta;
@@ -86,6 +95,7 @@ public class Departamento {
                 if (dep.asJsonObject().getString("Nombre").equals(nombre)) {
                     setCapital(dep.asJsonObject().getString("Capital"));
                     setDescripcion(dep.asJsonObject().getString("Informacion"));
+                    setRutaImg(dep.asJsonObject().getString("NombreImagen"));
                     break;
                 }
                 //System.out.println(dep.asJsonObject().getString("Nombre"));
