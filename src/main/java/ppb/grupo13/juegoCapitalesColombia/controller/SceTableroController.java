@@ -9,11 +9,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import ppb.grupo13.juegoCapitalesColombia.HelloApplication;
-import ppb.grupo13.juegoCapitalesColombia.juego;
 import ppb.grupo13.juegoCapitalesColombia.model.CapitalesDeColombia;
 import ppb.grupo13.juegoCapitalesColombia.model.Pregunta;
 import ppb.grupo13.juegoCapitalesColombia.model.Tablero;
-import ppb.grupo13.juegoCapitalesColombia.pregunta;
 
 import java.net.URL;
 import java.util.ArrayList;
