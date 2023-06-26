@@ -18,6 +18,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Clase controlador de la vista del historial de puntajes
+ */
 public class SceHistorialController {
 
     public TableView tblPuntajes;
@@ -28,6 +31,9 @@ public class SceHistorialController {
 
     private CapitalesDeColombia juego;
 
+    /**
+     * Metodo para llenar la tabla del historial de puntajes.
+     */
     public void pintarHistorial(){
         ArrayList<Jugador> jugadores = juego.getHistorial().getJugadores();
 
@@ -44,11 +50,19 @@ public class SceHistorialController {
         tblPuntajes.sort();
 
     }
-
+    /**
+     * Metodo para el paso del objeto CapitalesDeColombia a traves de los controladores.
+     * @param juego
+     */
     public void setJuego(CapitalesDeColombia juego){
         this.juego = juego;
     }
 
+    /**
+     * Metodo para manejar el evento del boton "Reiniciar" en la pantalla de Historia de puntajes
+     * @param actionEvent
+     * @throws IOException si ocurre un error al cambiar de escena.
+     */
     public void onReiniciarButtonClick(ActionEvent actionEvent) throws IOException {
         SceneSwitch.realizarSwitch(AnchorPaneScene1,"SceBienvenida.fxml",new CapitalesDeColombia());
     }

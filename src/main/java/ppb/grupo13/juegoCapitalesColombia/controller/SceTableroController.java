@@ -16,10 +16,9 @@ import ppb.grupo13.juegoCapitalesColombia.model.Tablero;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import static ppb.grupo13.juegoCapitalesColombia.SceneSwitch.*;
-
-
+/**
+ * Controlador para la segunda escena del juego "Capitales de Colombia".
+ */
 public class SceTableroController {
     @FXML
     public Label mostrarRespuesta;
@@ -53,6 +52,12 @@ public class SceTableroController {
     private int contRespuestas;
     private final int MAX_RES = 10;
 
+    /**
+     *Metodo para la generacion de una nueva pregunta en el controlador.
+     * @param pregunta pregunta generada.
+     * @param image imagen del departamento a mostrar.
+     * @respuestas opciones de respuesta generados.
+     */
     @FXML
     protected void nuevaPregunta(){
         pregunta = juego.getTablero().generarPregunta();
@@ -76,7 +81,10 @@ public class SceTableroController {
         btnResponder.setDisable(false);
         btnSiguiente.setDisable(true);
     }
-
+    /**
+     * Método para manejar el evento del botón "responder".
+     * @param event el evento del botón.
+     */
     @FXML
     protected void responder(ActionEvent event){
         String respuestaUsuario;
@@ -117,10 +125,17 @@ public class SceTableroController {
         }
     }
 
+    /**
+     * Metodo para el paso del objeto CapitalesDeColombia a traves de los controladores.
+     * @param juego
+     */
     public void setJuego(CapitalesDeColombia juego){
         this.juego = juego;
     }
 
+    /**
+     * Metodo para el manejo del boton "Finalizar"
+     */
     @FXML
     protected void finalizarJuego() {
         try {
