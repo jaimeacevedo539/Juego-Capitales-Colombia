@@ -11,7 +11,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import ppb.grupo13.juegoCapitalesColombia.model.*;
-
+/**
+ * Controlador para la primera escena del juego "Capitales de Colombia".
+ */
 public class SceBienvenidaController {
 
 
@@ -39,6 +41,10 @@ public class SceBienvenidaController {
     private ImageView mapa;
     @FXML
     public TextField tfAlias;
+    /**
+     * Método para manejar el evento del botón "Inicio".
+     * @param event el evento del botón.
+     */
     @FXML
     protected void onHelloButtonClick() {
         try {

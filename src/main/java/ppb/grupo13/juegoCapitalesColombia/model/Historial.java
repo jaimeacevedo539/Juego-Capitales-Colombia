@@ -8,10 +8,16 @@ import java.util.HashMap;
 import java.util.TreeMap;
 import javax.json.*;
 
+/**
+ * Clase para representar el historial del juego "Capitales de Colombia".
+ */
 public class Historial {
     private HashMap<String,Jugador> jugadores;
     private final String JSON_HIST = "src/main/resources/ppb/grupo13/juegoCapitalesColombia/JsonFiles/HistorialPuntaje.json";
 
+    /**
+     * Constructor por defecto para la clase Historial.
+     */
     public Historial() {
         if (jugadores == null){
             jugadores = new HashMap<String,Jugador>();
@@ -19,11 +25,20 @@ public class Historial {
         cargarHistoriaJugadores();
     }
 
+    /**
+     * Método para agregar un nuevo jugador al historial del juego.
+     * @param j el nuevo jugador a agregar al historial del juego.
+     */
     public void agregarJugador (Jugador j){
         jugadores.put(j.getAlias(),j);
         guardarHistoriaJugadores();
     }
 
+    /**
+     * Método para obtener un jugador del historial del juego.
+     * @param nombre el nombre del jugador a obtener del historial del juego.
+     * @return el jugador obtenido del historial del juego o null si no se encuentra en el historial.
+     */
     public Jugador obtenerJugador (String nombre){
         if(jugadores.containsKey(nombre)){
             return jugadores.get(nombre);
@@ -34,6 +49,11 @@ public class Historial {
         }
     }
 
+    /**
+     * Método para eliminar un jugador del historial del juego.
+     * @param j el jugador a eliminar del historial del juego.
+     * @return verdadero si el jugador fue eliminado correctamente, falso en caso contrario.
+     */
     public boolean eliminarJugador (Jugador j){
         if(jugadores.containsKey(j.getAlias())){
             jugadores.remove(j.getAlias());
@@ -45,6 +65,9 @@ public class Historial {
         }
     }
 
+    /**
+     * Método para cargar la historia de los jugadores desde un archivo JSON.
+     */
     private void cargarHistoriaJugadores(){
 
         try {
@@ -69,17 +92,24 @@ public class Historial {
         }
     }
 
-    public TreeMap getPuntajesOrdenados(){
-        TreeMap<Integer,String> map = new TreeMap<Integer,String>();
+    /**
+     * Método para obtener los puntajes de los jugadores ordenados de menor a mayor.
+     * @return un TreeMap con los puntajes de los jugadores ordenados de menor a mayor.
+     */
+   public ArrayList<Jugador> getJugadores(){
+        ArrayList<Jugador> map = new ArrayList<>();
 
         for (Jugador j:jugadores.values()) {
-            map.put(j.getPuntaje(),j.getAlias());
+            map.add(j);
         }
 
         //System.out.println(map);
         return map;
     }
 
+    /**
+     * Método para guardar la historia de los jugadores en un archivo JSON.
+     */
     private void guardarHistoriaJugadores(){
 
         try {
@@ -115,8 +145,4 @@ public class Historial {
             System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
-
-
-
-
 }
