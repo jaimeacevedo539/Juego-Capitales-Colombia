@@ -15,6 +15,8 @@ import java.io.IOException;
  * Clase principal del juego "Capitales de Colombia".
  */
 public class HelloApplication extends Application {
+
+    private static Stage stage;
     /**
      * Método para iniciar el juego.
      * @param stage el escenario principal del juego.
@@ -22,35 +24,21 @@ public class HelloApplication extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        /* FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Scene2.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("SceBienvenida.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Capitales de Colombia 1");
+        stage.setTitle("Capitales de Colombia");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
-        */
+        setStage(stage);
+    }
 
-        /*
-        Historial h = new Historial();
-        h.getPuntajesOrdenados();
+    public static Stage getStage(){
+        return stage;
+    }
 
-        Jugador j = new Jugador("Fer",30);
-        h.agregarJugador(j);
-        */
-
-        /*Pregunta p = new Pregunta("Cundinamarca");
-        System.out.println(p.getPregunta());
-        System.out.println(p.getRespuestaCorrecta());
-        System.out.println(p.getPuntaje());
-        System.out.println("opciones: ");
-
-        for (Object g:p.getOpciones()) {
-            System.out.println(g);
-        }*/
-
-
-
-
+    private static void setStage(Stage s){
+        stage = s;
     }
 
     /**

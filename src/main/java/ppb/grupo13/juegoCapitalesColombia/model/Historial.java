@@ -96,11 +96,11 @@ public class Historial {
      * Método para obtener los puntajes de los jugadores ordenados de menor a mayor.
      * @return un TreeMap con los puntajes de los jugadores ordenados de menor a mayor.
      */
-    public TreeMap getPuntajesOrdenados(){
-        TreeMap<Integer,String> map = new TreeMap<Integer,String>();
+   public ArrayList<Jugador> getJugadores(){
+        ArrayList<Jugador> map = new ArrayList<>();
 
         for (Jugador j:jugadores.values()) {
-            map.put(j.getPuntaje(),j.getAlias());
+            map.add(j);
         }
 
         //System.out.println(map);
@@ -141,7 +141,8 @@ public class Historial {
             outputStream.close();
             //System.out.println("jugadores guardados: "+objectBuilder.build());
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println("error al leer el historial de puntajes");
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
 }

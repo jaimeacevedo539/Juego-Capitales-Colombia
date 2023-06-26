@@ -97,7 +97,8 @@ public class Pregunta {
             }
 
         }catch (Exception e){
-            System.out.println(e.toString());
+            System.out.println("error al leer opciones de pregunta");
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
 
@@ -112,7 +113,7 @@ public class Pregunta {
      * Método para obtener las opciones de respuesta a la pregunta actual.
      * @return un ArrayList con las opciones de respuesta a la pregunta actual.
      */
-    public ArrayList getOpciones() {
+    public ArrayList<String> getOpciones() {
         return opciones;
     }
     /**

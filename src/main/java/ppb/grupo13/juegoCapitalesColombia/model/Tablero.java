@@ -56,6 +56,12 @@ public class Tablero {
     public String getDescripcion(){
         return depActual.getDescripcion();
     }
+    /**
+     * Metodo para obtener la ruta de la imagen del departamento
+     */
+    public String getRutaImg(){
+        return depActual.getRutaImg();
+    }
 
     /**
      * Método para leer los departamentos desde un archivo JSON y cargarlos en el tablero del juego.
@@ -81,11 +87,12 @@ public class Tablero {
                 d = new Departamento(dep.asJsonObject().getString("Nombre"),i);
                 departamentos.put(i,d);
                 i++;
-                //System.out.println(i+dep.asJsonObject().getString("Nombre"));
+
             }
-            System.out.println("cargue deps finalizada");
+
         }catch (Exception e){
-            System.out.println(e.toString());
+            System.out.println("error al leer los departamentos:");
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
 }

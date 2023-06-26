@@ -87,7 +87,7 @@ public class CapitalesDeColombia {
             //tablero.generarPregunta();
             return "¡Incorrecto!. "+tablero.getDescripcion();
         }
-        return "Respuesta No Especificada";
+
     }
 
     /**

@@ -15,6 +15,7 @@ public class Departamento {
     private String nombre;
     private String capital;
     private String descripcion;
+    private String rutaImg;
     private int numero;
 
     /**
@@ -82,76 +83,92 @@ public class Departamento {
      */
     public String getDescripcion() {
         return descripcion;
-        /**
-         * Método para establecer la descripción del departamento.
-         * @param descripcion la descripción del departamento.
-         */
-        private void setDescripcion(String descripcion) {
-            this.descripcion = descripcion;
-        }
+    }
+    /**
+     * Método para establecer la descripción del departamento.
+     * @param descripcion la descripción del departamento.
+     */
+    private void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    /**
+     * Método para obtener el número del departamento.
+     * @return el número del departamento.
+     */
+    public int getNumero() {
+        return numero;
+    }
+    /**
+     * Método para establecer el número del departamento.
+     * @param numero el número del departamento.
+     */
+    private void setNumero(int numero) {
+        this.numero = numero;
+    }
+    /**
+     * Método para obetener el nombre de la imagen del departamento.
+     * @param ruta del departamento.
+     */
+    public String getRutaImg() {
+        return rutaImg;
+    }
+    /**
+     * Método para establecer el nombre de la imagen del departamento.
+     * @param ruta del departamento.
+     */
+    private void setRutaImg(String rutaImg) {
+        this.rutaImg = rutaImg;
+    }
 
-        /**
-         * Método para obtener el número del departamento.
-         * @return el número del departamento.
-         */
-        public int getNumero() {
-            return numero;
-        }
+    /**
+     * Método para crear una nueva pregunta para el departamento.
+     * @return una nueva pregunta para el departamento.
+     */
+    public Pregunta crearPregunta(){
+       pregunta = new Pregunta (nombre);
+       return pregunta;
+    }
 
-        /**
-         * Método para establecer el número del departamento.
-         * @param numero el número del departamento.
-         */
-        private void setNumero(int numero) {
-            this.numero = numero;
-        }
+    /**
+     * Método para verificar si una respuesta es correcta o incorrecta.
+     * @param respuesta la respuesta enviada por el usuario.
+     * @return verdadero si la respuesta es correcta, falso en caso contrario.
+     */
+    public boolean esRespuestaCorrecta(String respuesta){
 
-        /**
-         * Método para crear una nueva pregunta para el departamento.
-         * @return una nueva pregunta para el departamento.
-         */
-        public Pregunta crearPregunta(){
-            pregunta = new Pregunta (nombre);
-            return pregunta;
-        }
-
-        /**
-         * Método para verificar si una respuesta es correcta o incorrecta.
-         * @param respuesta la respuesta enviada por el usuario.
-         * @return verdadero si la respuesta es correcta, falso en caso contrario.
-         */
-        public boolean esRespuestaCorrecta(String respuesta){
-            return respuesta.equals(pregunta.getRespuestaCorrecta());
-        }
+        return respuesta.equals(pregunta.getRespuestaCorrecta());
+    }
 
         /**
          * Método para leer información del departamento desde un archivo JSON.
          */
         private void leerInformacionDepartamento(){
 
-            try {
-                File file = new File(JSON_DPTS);
-                InputStream inputStream = new FileInputStream(file);
+        try {
+            File file = new File(JSON_DPTS);
+            InputStream inputStream = new FileInputStream(file);
 
-                JsonReader jsonReader = Json.createReader(inputStream);
-                JsonObject jsonObjectFile = jsonReader.readObject();
+            JsonReader jsonReader = Json.createReader(inputStream);
+            JsonObject jsonObjectFile = jsonReader.readObject();
 
-                jsonReader.close();
-                inputStream.close();
+            jsonReader.close();
+            inputStream.close();
 
-                JsonArray departamentosArray = jsonObjectFile.getJsonArray("Departamentos");
+            JsonArray departamentosArray = jsonObjectFile.getJsonArray("Departamentos");
 
-                for (JsonValue dep : departamentosArray) {
-                    if (dep.asJsonObject().getString("Nombre").equals(nombre)) {
-                        setCapital(dep.asJsonObject().getString("Capital"));
-                        setDescripcion(dep.asJsonObject().getString("Informacion"));
-                        break;
-                    }
-                    //System.out.println(dep.asJsonObject().getString("Nombre"));
+            for (JsonValue dep : departamentosArray) {
+                if (dep.asJsonObject().getString("Nombre").equals(nombre)) {
+                    setCapital(dep.asJsonObject().getString("Capital"));
+                    setDescripcion(dep.asJsonObject().getString("Informacion"));
+                    setRutaImg(dep.asJsonObject().getString("NombreImg"));
+                    break;
                 }
-
-            }catch (Exception e){
-                System.out.println(e.toString());
+                //System.out.println(dep.asJsonObject().getString("Nombre"));
             }
+
+        }catch (Exception e){
+            System.out.println("error al leer la informacion del departamento "+nombre);
+            System.out.println("Error en: "+getClass().getName()+" "+e);
         }
     }
+}
