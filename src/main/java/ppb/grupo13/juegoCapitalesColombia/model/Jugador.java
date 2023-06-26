@@ -1,16 +1,68 @@
 package ppb.grupo13.juegoCapitalesColombia.model;
 
+/**
+ * Clase para representar un jugador en el juego "Capitales de Colombia".
+ */
 public class Jugador {
 
-    String Alias;
-    int puntaje;
+    private String alias;
+    private int puntaje;
 
+    /**
+     * Constructor para la clase Jugador que recibe un alias.
+     * @param alias el alias del jugador.
+     */
     public Jugador(String alias) {
-        Alias = alias;
+        setAlias(alias);
     }
 
+    /**
+     * Constructor para la clase Jugador que recibe un alias y un puntaje.
+     * @param alias el alias del jugador.
+     * @param puntaje el puntaje del jugador.
+     */
+    public Jugador(String alias, int puntaje) {
+        setAlias(alias);
+        setPuntaje(puntaje);
+    }
+
+    /**
+     * Método para sumar puntos al puntaje del jugador.
+     * @param p la cantidad de puntos a sumar al puntaje del jugador.
+     */
     public void sumarPuntaje(int p){
-        //ToDo
+        setPuntaje(getPuntaje()+p);
     }
 
+    /**
+     * Método para obtener el alias del jugador.
+     * @return el alias del jugador.
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    /**
+     * Método para establecer el alias del jugador.
+     * @param alias el alias del jugador.
+     */
+    private void setAlias(String alias) {
+        this.alias = alias;
+    }
+
+    /**
+     * Método para obtener el puntaje del jugador.
+     * @return el puntaje del jugador.
+     */
+    public int getPuntaje() {
+        return puntaje;
+    }
+
+    /**
+     * Método para establecer el puntaje del jugador.
+     * @param puntaje el puntaje del jugador.
+     */
+    private void setPuntaje(int puntaje) {
+        this.puntaje = puntaje;
+    }
 }

@@ -8,14 +8,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="AnchorPaneScene3" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ppb.grupo13.juegoCapitalesColombia.Scene3Controller">
+
+<AnchorPane fx:id="AnchorPaneScene3" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ppb.grupo13.juegoCapitalesColombia.controller.SceTableroController">
    <children>
-      <Label fx:id="labelInit" layoutX="562.0" layoutY="197.0" prefHeight="35.0" prefWidth="224.0" text="">
+      <Label fx:id="labelInit" layoutX="481.0" layoutY="168.0" prefHeight="91.0" prefWidth="481.0" text="" wrapText="true">
          <font>
             <Font size="24.0" />
-         </font></Label>
+         </font>
+      </Label>
       <Button fx:id="btnSiguiente" layoutX="786.0" layoutY="465.0" mnemonicParsing="false" onAction="#nuevaPregunta" text="Siguiente" />
-      <Label layoutX="460.0" layoutY="114.0" text="Capitales de Colombia SC3">
+      <Label layoutX="460.0" layoutY="114.0" text="Capitales de Colombia">
          <font>
             <Font size="36.0" />
          </font>
@@ -24,11 +26,14 @@
       <RadioButton fx:id="respuesta1" layoutX="608.0" layoutY="270.0" mnemonicParsing="false">
          <toggleGroup>
             <ToggleGroup fx:id="respuestas" />
-         </toggleGroup></RadioButton>
+         </toggleGroup>
+      </RadioButton>
       <RadioButton fx:id="respuesta2" layoutX="608.0" layoutY="300.0" mnemonicParsing="false" toggleGroup="$respuestas" />
       <RadioButton fx:id="respuesta3" layoutX="608.0" layoutY="336.0" mnemonicParsing="false" toggleGroup="$respuestas" />
       <RadioButton fx:id="respuesta4" layoutX="608.0" layoutY="372.0" mnemonicParsing="false" toggleGroup="$respuestas" />
       <Button fx:id="btnResponder" layoutX="647.0" layoutY="465.0" mnemonicParsing="false" onAction="#responder" text="Responder" />
-      <Label fx:id="mostrarRespuesta" layoutX="121.0" layoutY="506.0" prefHeight="25.0" prefWidth="317.0" textFill="#da0808" />
+      <Label fx:id="mostrarRespuesta" layoutX="68.0" layoutY="506.0" prefHeight="53.0" prefWidth="875.0" textFill="#da0808" wrapText="true" />
+      <Label fx:id="lblPuntajeActual" layoutX="815.0" layoutY="578.0" prefHeight="17.0" prefWidth="184.0" wrapText="true" />
+      <Button fx:id="btnFinalizar" disable="true" layoutX="786.0" layoutY="465.0" mnemonicParsing="false" onAction="#finalizarJuego" prefHeight="25.0" prefWidth="66.0" text="Finalizar" visible="false" />
    </children>
 </AnchorPane>
