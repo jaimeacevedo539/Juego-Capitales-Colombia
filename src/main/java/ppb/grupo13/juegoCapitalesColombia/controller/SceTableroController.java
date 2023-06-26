@@ -53,7 +53,7 @@ public class SceTableroController {
     private Pregunta pregunta;
 
     private int contRespuestas;
-    private final int MAX_RES = 2;
+    private final int MAX_RES = 10;
 
     @FXML
     protected void nuevaPregunta(){
