@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import ppb.grupo13.juegoCapitalesColombia.HelloApplication;
 import ppb.grupo13.juegoCapitalesColombia.juego;
 import ppb.grupo13.juegoCapitalesColombia.model.CapitalesDeColombia;
@@ -18,14 +19,22 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import static ppb.grupo13.juegoCapitalesColombia.SceneSwitch.*;
+
 
 public class SceTableroController {
     @FXML
     public Label mostrarRespuesta;
     @FXML
     public Button btnSiguiente;
+    @FXML
     public Button btnResponder;
+    @FXML
     public Label lblPuntajeActual;
+    @FXML
+    public Button btnFinalizar;
+    @FXML
+    public AnchorPane AnchorPaneScene3;
     @FXML
     private Label labelInit;
     @FXML
@@ -42,6 +51,9 @@ public class SceTableroController {
     private CapitalesDeColombia juego;
     private String randomMap;
     private Pregunta pregunta;
+
+    private int contRespuestas;
+    private final int MAX_RES = 5;
 
     @FXML
     protected void nuevaPregunta(){
@@ -92,10 +104,33 @@ public class SceTableroController {
         respuesta3.setDisable(true);
         respuesta4.setDisable(true);
         btnSiguiente.setDisable(false);
+
+        if(contRespuestas != 0){
+            contRespuestas++;
+        }else {
+            contRespuestas=1;
+        }
+
+        if(contRespuestas==MAX_RES){
+            btnSiguiente.setDisable(true);
+            btnSiguiente.setVisible(false);
+            btnFinalizar.setDisable(false);
+            btnFinalizar.setVisible(true);
+        }
     }
 
     public void setJuego(CapitalesDeColombia juego){
         this.juego = juego;
     }
 
+    @FXML
+    protected void finalizarJuego() {
+        try {
+            juego.getHistorial().agregarJugador(juego.getJugador());
+            SceneSwitch.realizarSwitch(AnchorPaneScene3, "SceHistorial.fxml", juego);
+        }catch(Exception e){
+            System.out.println("Error switcheando Tablero:");
+            System.out.println(e);
+        }
+    }
 }

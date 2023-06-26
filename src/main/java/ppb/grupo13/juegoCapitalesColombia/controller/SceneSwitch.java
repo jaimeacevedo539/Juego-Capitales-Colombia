@@ -28,6 +28,7 @@ public class SceneSwitch {
         } else if (fxml.equals("SceHistorial.fxml")) {
             SceHistorialController sceHistorialController = (SceHistorialController) fxmlLoader.getController();
             sceHistorialController.setJuego(juego);
+            sceHistorialController.pintarHistorial();
         }
         HelloApplication.getStage().setScene(scene);
 
