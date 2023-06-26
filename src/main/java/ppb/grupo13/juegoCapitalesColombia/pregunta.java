@@ -2,13 +2,8 @@ package ppb.grupo13.juegoCapitalesColombia;
 
 import java.util.Arrays;
 
-/**
- * Clase para representar una pregunta en el juego "Capitales de Colombia".
- */
 public class pregunta {
-    //constructor
     public pregunta(){}
-    //listado departamentos
     String[][] matriz = new String[][]{
             {"Colombia","Bogota","Colombia tierra querida"},
             {"Amazonas", "Leticia","El departamento del Amazonas está ubicado en el extremo sur del país, en la región Amazonía. Es el departamento con mayor superficie de Colombia, aunque en su mayoría es territorio selvático."},
@@ -27,70 +22,50 @@ public class pregunta {
             {"Cundinamarca", "Bogotá","El departamento de Cundinamarca está ubicado en el centro del país, en la región Andina. Posee en total 116 municipios, distribuidos en 15 provincias. Su capital es Bogotá, que también es la capital de Colombia."},
             {"Guainía", "Puerto Inírida","El departamento del Guainía tiene como capital a Inírida y se encuentra ubicado al oriente de Colombia, en la región Amazonía."},
             {"Guaviare", "San José del Guaviare","El departamento del Guaviare está ubicado en la región Amazonia y su capital es San José del Guaviare."},
-            {"Huila", "Neiva","El departamento del Huila es un departamento ubicado al suroeste del país, en la región Andina."},
-            {"La Guajira", "Riohacha","El departamento de La Guajira (en wayuunaiki: Wajiira) es un departamento de Colombia ubicado en la Región Caribe y su capital es Riohacha."},
-            {"Magdalena", "Santa Marta","El departamento del Magdalena es un departamento de Colombia. Su capital es Santa Marta y se encuentra ubicado en la región Caribe."},
-            {"Meta", "Villavicencio","El departamento del Meta está ubicado en los llanos orientales de Colombia, en la región Orinoquía. Su capital es Villavicencio."},
-            {"Nariño", "Pasto","El departamento de Nariño está ubicado en las regiones Andina y Pacífica. Su capital es San Juan de Pasto."},
-            {"Norte de Santander", "Cúcuta","El departamento de Norte de Santander cuya capital es Cúcuta, está ubicado al nororiente del país, en la región Andina"},
-            {"Putumayo", "Mocoa","El departamento del Putumayo está ubicado al suroccidente del país, en la región Amazonía. Su capital es Mocoa."},
-            {"Quindío", "Armenia","El departamento del Quindío está ubicado en el centro-occidente del país, en la región Andina. Su capital es Armenia. Pertenece al eje cafetero y a la región paisa."},
-            {"Risaralda", "Pereira","El departamento de Risaralda está ubicado en el centro-occidente del país, en la región andina. Su capital es Pereira."},
-            {"San Andrés y Providencia", "San Andrés","San Andrés y Providencia también conocido como El Archipiélago de San Andrés, Providencia y Santa Catalina cuya capital es San Andrés, se encuentra ubicado al occidente del Océano Atlántico, a 775 km (480 millas náuticas) al noroccidente de la costa atlántica del territorio continental del país y a 220 km (140 millas náuticas) de las costas orientales de Nicaragua."},
-            {"Santander", "Bucaramanga","El departamento de Santander cuya capital es Bucaramanga fundada el 22 de diciembre de 1622 por Andrés Páez de Sotomayor , se encuentra ubicado al nororiente del país, en la región andina."},
-            {"Sucre", "Sincelejo","El departamento de Sucre está ubicado al norte del país, en la región Caribe. Su capital es Sincelejo el nombre de esta ciudad fue tomada del cacique que comandaba la tribu de allí, el Cacique Chinchelejo."},
-            {"Tolima", "Ibagué","El departamento del Tolima está ubicado en el centro – occidente de Colombia, en la región andina. Su capital es Ibagué."},
-            {"Valle del Cauca", "Cali","El departamento del Valle del Cauca es uno de los departamentos más importantes del país y se encuentra ubicado entre la región Andina y Pacífica."},
-            {"Vaupés", "Mitú","El departamento del Vaupés está ubicado en la región Amazónica, su capital es Mitú."},
-            {"Vichada", "Puerto Carreño","El departamento del Vichada está ubicado al oriente del país, entre las regiones Orinoquía y Amazónica, Su capital es Puerto Carreño."},
+            {"Huila", "Neiva","El departamento del Huila es un departamento ubicado al suroeste del país,
+                    {"La Guajira", "Riohacha","El departamento de La Guajira (en wayuunaiki: Wajiira) es un departamento de Colombia ubicado en la Región Caribe y su capital es Riohacha."},
+                    {"Magdalena", "Santa Marta","El departamento del Magdalena es un departamento de Colombia. Su capital es Santa Marta y se encuentra ubicado en la región Caribe."},
+                    {"Meta", "Villavicencio","El departamento del Meta está ubicado en los llanos orientales de Colombia, en la región Orinoquía. Su capital es Villavicencio."},
+                    {"Nariño", "Pasto","El departamento de Nariño está ubicado en las regiones Andina y Pacífica. Su capital es San Juan de Pasto."},
+                    {"Norte de Santander", "Cúcuta","El departamento de Norte de Santander cuya capital es Cúcuta, está ubicado al nororiente del país, en la región Andina"},
+                    {"Putumayo", "Mocoa","El departamento del Putumayo está ubicado al suroccidente del país, en la región Amazonía. Su capital es Mocoa."},
+                    {"Quindío", "Armenia","El departamento del Quindío está ubicado en el centro-occidente del país, en la región Andina. Su capital es Armenia. Pertenece al eje cafetero y a la región paisa."},
+                    {"Risaralda", "Pereira","El departamento de Risaralda está ubicado en el centro-occidente del país, en la región andina. Su capital es Pereira."},
+                    {"San Andrés y Providencia", "San Andrés","San Andrés y Providencia también conocido como El Archipiélago de San Andrés, Providencia y Santa Catalina cuya capital es San Andrés, se encuentra ubicado al occidente del Océano Atlántico, a 775 km (480 millas náuticas) al noroccidente de la costa atlántica del territorio continental del país y a 220 km (140 millas náuticas) de las costas orientales de Nicaragua."},
+                    {"Santander", "Bucaramanga","El departamento de Santander cuya capital es Bucaramanga fundada el 22 de diciembre de 1622 por Andrés Páez de Sotomayor , se encuentra ubicado al nororiente del país, en la región andina."},
+                    {"Sucre", "Sincelejo","El departamento de Sucre está ubicado al norte del país, en la región Caribe. Su capital es Sincelejo el nombre de esta ciudad fue tomada del cacique que comandaba la tribu de allí, el Cacique Chinchelejo."},
+                    {"Tolima", "Ibagué","El departamento del Tolima está ubicado en el centro – occidente de Colombia, en la región andina. Su capital es Ibagué."},
+                    {"Valle del Cauca", "Cali","El departamento del Valle del Cauca es uno de los departamentos más importantes del país y se encuentra ubicado entre la región Andina y Pacífica."},
+                    {"Vaupés", "Mitú","El departamento del Vaupés está ubicado en la región Amazónica, su capital es Mitú."},
+                    {"Vichada", "Puerto Carreño","El departamento del Vichada está ubicado al oriente del país, entre las regiones Orinoquía y Amazónica, Su capital es Puerto Carreño."},
 
-    };
+            };
 
 
     int aleatorio = (int) (Math.random() * 30 + 1);
 
-    /**
-     * Método para obtener el código aleatorio.
-     * @return el código aleatorio.
-     */
     public int getCodigo(){
         return aleatorio;
     }
 
-    /**
-     * Método para obtener el nombre del departamento.
-     * @return el nombre del departamento.
-     */
     public String getDepartamento(){
         String Departamento;
         Departamento = matriz[aleatorio][0];
         return Departamento;
     }
 
-    /**
-     * Método para obtener el nombre de la capital del departamento.
-     * @return el nombre de la capital del departamento.
-     */
     public String getCapital(){
         String Capital;
         Capital = matriz[aleatorio][1];
         return Capital;
     }
 
-    /**
-     * Método para obtener la descripción del departamento.
-     * @return la descripción del departamento.
-     */
     public String getDescripcion(){
         String Descripcion;
         Descripcion = matriz[aleatorio][2];
         return Descripcion;
     }
 
-    /**
-     * Método para generar opciones de respuesta para la pregunta.
-     * @return un arreglo con las opciones de respuesta.
-     */
     public String [] generarOpciones(){
         int r1 = (int) (Math.random() * 30 + 1);
         int r2 = (int) (Math.random() * 30 + 1);
