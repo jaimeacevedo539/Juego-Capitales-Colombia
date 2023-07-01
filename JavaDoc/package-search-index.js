@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"m":"com.example.demo","l":"ppb.grupo13.juegoCapitalesColombia"},{"m":"com.example.demo","l":"ppb.grupo13.juegoCapitalesColombia.controller"},{"m":"com.example.demo","l":"ppb.grupo13.juegoCapitalesColombia.model"}];updateSearchResults();
